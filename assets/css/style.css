@@ -1,0 +1,478 @@
+:root {
+  --utama: #1e3a5f;
+  --utama-hover: #162c49;
+  --aksen: #2563eb;
+  --bahaya: #dc2626;
+  --bahaya-bg: #fee2e2;
+  --bg: #f1f5f9;
+  --teks: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --putih: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+/* Navbar */
+nav {
+  background: var(--utama);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+}
+
+nav .brand {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: auto;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+nav a,
+nav .link {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+nav a:hover,
+nav .link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-weight: 600;
+}
+
+nav .btn-logout {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fecaca;
+  border: 1px solid rgba(254, 202, 202, 0.25);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+nav .btn-logout:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* Main Container */
+main {
+  max-width: 1040px;
+  margin: 28px auto;
+  padding: 0 20px 40px;
+}
+
+main.auth-wrap {
+  max-width: 440px;
+  margin: 48px auto;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: 24px;
+  color: var(--teks);
+}
+
+h2 {
+  margin: 24px 0 12px;
+  font-size: 18px;
+  color: var(--teks);
+}
+
+a {
+  color: var(--aksen);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Card untuk Form & Auth */
+form:not(.inline):not(.filter),
+.auth-card {
+  background: var(--putih);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  max-width: 480px;
+  margin-bottom: 24px;
+}
+
+.auth-card {
+  max-width: 100%;
+  padding: 28px;
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.auth-card form {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 6px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin: 18px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Form Elements */
+label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #334155;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  border-radius: 8px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: var(--teks);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--aksen);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button,
+.btn {
+  display: inline-block;
+  background: var(--utama);
+  color: #fff;
+  border: 0;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.05s;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--utama-hover);
+  text-decoration: none;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.btn-sm {
+  padding: 6px 11px;
+  font-size: 12.5px;
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.link {
+  background: none;
+  color: var(--aksen);
+  padding: 0;
+  font-weight: 500;
+}
+
+.link:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.danger {
+  color: var(--bahaya);
+}
+
+.inline {
+  display: inline;
+}
+
+/* Box Estimasi Harga */
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.total-box strong {
+  font-size: 18px;
+}
+
+/* Filter & Search Bar Admin */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  background: var(--putih);
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  margin-bottom: 18px;
+}
+
+.filter label {
+  margin-bottom: 0;
+  flex: 1 1 200px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Summary Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--putih);
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.card b {
+  display: block;
+  font-size: 26px;
+  color: var(--utama);
+  margin-bottom: 2px;
+}
+
+.card.omzet b {
+  font-size: 21px;
+  color: #15803d;
+}
+
+/* Tabel */
+.table-wrap {
+  background: var(--putih);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--putih);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.table-wrap table {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover,
+table tr:not(:first-child):hover {
+  background: #f8fafc;
+}
+
+.aksi {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Alert & Empty State */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alert.ok {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.alert.err {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.empty-state {
+  background: var(--putih);
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin: 0 0 14px;
+}
+
+/* Badges Status */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: #e5e7eb;
+}
+
+.badge.menunggu_pembayaran {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.dibayar {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge.diproses {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.badge.selesai {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.dibatalkan {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+@media (max-width: 640px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
